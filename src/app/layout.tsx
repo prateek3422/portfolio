@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const FiraCode = Fira_Code({ subsets: ["latin"] });
+const FiraCode = Fira_Code({ subsets: ["cyrillic"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={FiraCode.className}>
+      <body className={` ${FiraCode.className} bg-[#282C33] text-white`}>
         <Navbar />
         {children}
       </body>
