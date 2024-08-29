@@ -1,6 +1,7 @@
 import Button from "@/components/Button/Button";
 import Cards from "@/components/Cards/cards";
 import SkillCard from "@/components/SkillCard/SkillCard";
+import { MoveRight } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
@@ -28,6 +29,29 @@ export default function Home() {
       title: "ChertNodes",
       description: "Minecraft servers hosting",
       image: "/Rectangle 22 (1).png",
+    },
+  ];
+
+  const skill = [
+    {
+      skillName: "Languages",
+      skill: "JavaScript, TypeScript",
+    },
+    {
+      skillName: "frameworks",
+      skill: "React Express.js",
+    },
+    {
+      skillName: "Database",
+      skill: "Mongo, PostgreSQL",
+    },
+    {
+      skillName: "Tools",
+      skill: "Git, VS Code, Figma ",
+    },
+    {
+      skillName: "others",
+      skill: " Html css, Tailwind, Rest api ",
     },
   ];
 
@@ -107,29 +131,101 @@ export default function Home() {
       </div>
 
       <div className="flex  gap-4  justify-between items-center mt-4">
-        <div className="">
+        <div className=" hidden md:block">
           <img src="/Group36.svg" alt="Prateek" width={400} height={400} />
         </div>
-        <div className="flex flex-wrap  gap-2 items-center justify-center">
-          <SkillCard
-            skillName="Languages"
-            Skills="HTML, CSS, Python, Flask, JavaScript, React, Node, MongoDB, MySQL"
-          />
-          <SkillCard
-            skillName="Languages"
-            Skills="HTML, CSS, Python, Flask, JavaScript, React, Node, MongoDB, MySQL"
-          />
-          <SkillCard
-            skillName="Languages"
-            Skills="HTML, CSS, Python, Flask, JavaScript, React, Node, MongoDB, MySQL"
-          />
-          <SkillCard
-            skillName="Languages"
-            Skills="HTML, CSS, Python, Flask, JavaScript, React, Node, MongoDB, MySQL"
-          />
+        <div className="flex flex-wrap gap-2 items-center justify-center">
+          {skill.map((skill, index) => {
+            return (
+              <SkillCard
+                key={index}
+                skillName={skill.skillName}
+                Skills={skill.skill}
+              />
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="flex items-center gap-4 justify-between mt-8">
+        <div className="flex items-center gap-4">
+          <h1 className="text-white text-xl font-bold  w-max ">
+            <span className="text-Primary">#</span>About-me
+          </h1>
+          <div className="w-[30vw] h-[2px] bg-Primary  "></div>
+        </div>
+      </div>
+
+      <div className="grid  md:grid-cols-2 gap-8 md:gap-4 ">
+        <div className="flex flex-col items-start mt-8 gap-4">
+          <h1 className="text-Secondary ">Hello, i’m Elias!</h1>
+          <p className="text-Secondary ">
+            I’m a self-taught front-end developer based in Kyiv, Ukraine. I can
+            develop responsive websites from scratch and raise them into modern
+            user-friendly web experiences.
+          </p>
+          <p className="text-Secondary ">
+            Transforming my creativity and knowledge into a websites has been my
+            passion for over a year. I have been helping various clients to
+            establish their presence online. I always strive to learn about the
+            newest technologies and frameworks.
+          </p>
+
+          <Button className="flex gap-2 items-center">
+            {" "}
+            Read More <MoveRight />{" "}
+          </Button>
         </div>
 
-        <div className="mt-4"></div>
+        <div className="relative h-max w-max mx-auto">
+          <Image
+            src="/Style=Outline.svg"
+            alt="hero-left-img"
+            width={400}
+            height={400}
+            className="  absolute top-8 left-0 w-40 -z-10"
+          />
+          <Image src="/Image.svg" alt="Prateek" width={400} height={400} />
+          <Image
+            src="/Dots.svg"
+            alt="Prateek"
+            width={400}
+            height={400}
+            className="  absolute bottom-14 right-4 w-16 z-10"
+          />
+        </div>
+      </div>
+
+      <div className="flex items-center gap-4 justify-between mt-8">
+        <div className="flex items-center gap-4">
+          <h1 className="text-white text-xl font-bold  w-max ">
+            <span className="text-Primary">#</span>Contact me
+          </h1>
+          <div className="w-[30vw] h-[2px] bg-Primary  "></div>
+        </div>
+      </div>
+
+      <div className="grid  md:grid-cols-2 gap-8 md:gap-8 mt-4">
+        <p className="text-Secondary text-lg font-medium">
+          I’m interested in freelance opportunities. However, if you have other
+          request or question, don’t hesitate to contact me
+        </p>
+
+        <div className="border-2 border-Secondary rounded-lg p-4 flex flex-col  justify-center items-center mx-auto">
+          <h1>Massage me here</h1>
+          <div className="flex items-center gap-4">
+            <img src="/Discord.svg" alt="disord" />
+            <p className="text-Secondary text-xs font-medium ">prateek04312</p>
+          </div>
+          <div className="flex items-center gap-4">
+            <img src="/twitter.svg" alt="disord" />
+            <p className="text-Secondary text-xs font-medium ">prateek04312</p>
+          </div>
+          <div className="flex items-center gap-4">
+            <img src="/linkedin.svg" alt="disord" />
+            <p className="text-Secondary text-xs font-medium ">prateek04312</p>
+          </div>
+        </div>
       </div>
     </main>
   );
