@@ -164,12 +164,12 @@ export default function Home() {
             develop responsive websites from scratch and raise them into modern
             user-friendly web experiences.
           </p>
-          <p className="text-Secondary ">
+          {/* <p className="text-Secondary ">
             Transforming my creativity and knowledge into a websites has been my
             passion for over a year. I have been helping various clients to
             establish their presence online. I always strive to learn about the
             newest technologies and frameworks.
-          </p>
+          </p> */}
 
           <Button className="flex gap-2 items-center">
             {" "}
